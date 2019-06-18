@@ -23,7 +23,7 @@ validation_data_dir = '../dogcat-data/validation'
 nb_train_samples = 2000
 nb_validation_samples = 2000
 config.epochs = 50
-config.batch_size = 32
+config.batch_size = 20
 
 input_shape = (config.img_width, config.img_height, 3)
 
@@ -33,6 +33,10 @@ model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Conv2D(32, (3, 3)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+model.add(Conv2D(64, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
